@@ -16,7 +16,7 @@ export function initHeroScene(canvas: HTMLCanvasElement, container: HTMLElement)
 	renderer.setClearColor(0x000000, 0);
 
 	const scene = new THREE.Scene();
-	scene.fog = new THREE.FogExp2(0x111113, 0.12);
+	scene.fog = new THREE.FogExp2(0x0a0a0b, 0.08);
 
 	const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 50);
 	camera.position.set(0, 0, 5.2);

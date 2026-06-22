@@ -1,3 +1,7 @@
+---
+import HeroScene from './HeroScene.astro';
+---
+
 <section class="relative overflow-hidden border-b border-zinc-800 pt-28 pb-20 md:pt-36 md:pb-28">
 	<div
 		class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_60%_at_50%_0%,#000_40%,transparent_100%)] opacity-30"
@@ -39,26 +43,8 @@
 				</div>
 			</div>
 
-			<div class="flex flex-col justify-end md:col-span-4">
-				<div class="border border-zinc-800 bg-ink-elevated p-6">
-					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
-						Operating Parameters
-					</p>
-					<dl class="mt-4 space-y-4">
-						<div class="flex items-baseline justify-between border-b border-zinc-800 pb-3">
-							<dt class="font-mono text-xs text-zinc-500">Combined Experience</dt>
-							<dd class="font-mono text-sm text-white">20+ yrs</dd>
-						</div>
-						<div class="flex items-baseline justify-between border-b border-zinc-800 pb-3">
-							<dt class="font-mono text-xs text-zinc-500">Day Rate From</dt>
-							<dd class="font-mono text-sm text-accent">£800</dd>
-						</div>
-						<div class="flex items-baseline justify-between">
-							<dt class="font-mono text-xs text-zinc-500">Engagement Model</dt>
-							<dd class="font-mono text-sm text-white">Contract</dd>
-						</div>
-					</dl>
-				</div>
+			<div class="md:col-span-4">
+				<HeroScene />
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,145 @@
+---
+const appStoreUrl = 'https://apps.apple.com/gb/app/recommends/id6740585961';
+
+const features = [
+	'Curated local food discovery ranked by real user recommendations',
+	'Visual-first feed with interactive map and personal collections',
+	'Group event planning with real-time RSVPs and push notifications',
+	'AI-powered photo recognition for frictionless recommendation capture',
+];
+
+const stack = ['React Native', 'TypeScript', 'Python', 'Ansible', 'Linux', 'Custom CI/CD'];
+
+const pipeline = [
+	{ step: '01', label: 'Local Build', detail: 'Develop & validate on laptop' },
+	{ step: '02', label: 'Ansible Push', detail: 'Provisioned server config via automation' },
+	{ step: '03', label: 'Linux Deploy', detail: 'Zero-friction release to production' },
+];
+---
+
+<section id="work" class="border-b border-zinc-800 py-20 md:py-28">
+	<div class="mx-auto max-w-7xl px-6 md:px-10">
+		<div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-12">
+			<div class="md:col-span-5">
+				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Selected Work</p>
+				<h2 class="mt-4 text-3xl font-light tracking-tight text-white md:text-4xl">
+					Shipped to production.
+				</h2>
+			</div>
+			<div class="flex items-end md:col-span-7">
+				<p class="max-w-lg text-zinc-500">
+					We don't just consult—we build. Recommends is a fully featured consumer product, live on
+					the App Store, backed by a bespoke deployment pipeline engineered for speed and control.
+				</p>
+			</div>
+		</div>
+
+		<article class="border border-zinc-800 bg-ink-elevated">
+			<div class="grid grid-cols-1 md:grid-cols-12">
+				<div class="border-b border-zinc-800 p-8 md:col-span-7 md:border-r md:border-b-0 md:p-10">
+					<div class="flex flex-wrap items-center gap-3">
+						<span class="font-mono text-xs text-accent">Case Study</span>
+						<span class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+							Live on App Store
+						</span>
+					</div>
+
+					<h3 class="mt-6 text-2xl font-medium tracking-tight text-white md:text-3xl">
+						<a
+							href={appStoreUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="transition-colors hover:text-accent"
+						>
+							Recommends
+						</a>
+					</h3>
+					<p class="mt-1 font-mono text-sm text-zinc-500">recommends.app</p>
+
+					<p class="mt-6 leading-relaxed text-zinc-400">
+						A local food recommendation app that surfaces only the top dishes—ranked by genuine user
+						recommendations, not algorithms or paid placement. Visual discovery, group coordination,
+						and AI-assisted capture, built as a production-grade React Native product from the ground
+						up.
+					</p>
+
+					<ul class="mt-8 space-y-3">
+						{
+							features.map((feature) => (
+								<li class="flex gap-3 text-sm text-zinc-500">
+									<span class="mt-1.5 h-px w-3 shrink-0 bg-accent" aria-hidden="true" />
+									{feature}
+								</li>
+							))
+						}
+					</ul>
+
+					<div class="mt-8 flex flex-wrap gap-2">
+						{
+							stack.map((tag) => (
+								<span class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
+									{tag}
+								</span>
+							))
+						}
+					</div>
+
+					<a
+						href={appStoreUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-10 inline-flex items-center gap-3 border border-zinc-700 px-6 py-3 font-mono text-xs uppercase tracking-widest text-zinc-300 transition-all hover:border-accent hover:text-white"
+					>
+						View on App Store
+						<span aria-hidden="true">↗</span>
+					</a>
+				</div>
+
+				<div class="p-8 md:col-span-5 md:p-10">
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Deployment Architecture
+					</p>
+					<p class="mt-4 text-sm leading-relaxed text-zinc-500">
+						No generic cloud CI. A manually engineered pipeline that harnesses local machine power
+						to push and deploy directly to an Ansible-provisioned Linux server—configured exactly to
+						our specifications.
+					</p>
+
+					<div class="mt-8 space-y-0">
+						{
+							pipeline.map((item, i) => (
+								<div class="relative flex gap-4">
+									{i < pipeline.length - 1 && (
+										<span
+											class="absolute top-8 left-[11px] h-full w-px bg-zinc-800"
+											aria-hidden="true"
+										/>
+									)}
+									<span class="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center border border-zinc-700 bg-ink font-mono text-[10px] text-accent">
+										{item.step}
+									</span>
+									<div class="pb-8">
+										<p class="font-mono text-sm text-white">{item.label}</p>
+										<p class="mt-1 font-mono text-xs text-zinc-600">{item.detail}</p>
+									</div>
+								</div>
+							))
+						}
+					</div>
+
+					<div class="border border-zinc-800 bg-ink p-4 font-mono text-xs leading-relaxed text-zinc-600">
+						<p>
+							<span class="text-zinc-500">$</span> ansible-playbook deploy.yml
+						</p>
+						<p class="mt-1 text-zinc-700">
+							<span class="text-accent">→</span> provisioned linux host
+						</p>
+						<p class="mt-1 text-zinc-700">
+							<span class="text-accent">→</span> production release
+						</p>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</section>

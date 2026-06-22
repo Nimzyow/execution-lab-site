@@ -1,0 +1,92 @@
+---
+const email = 'hello@studio.eng';
+---
+
+<section id="contact" class="py-20 md:py-28">
+	<div class="mx-auto max-w-7xl px-6 md:px-10">
+		<div class="grid grid-cols-1 gap-16 md:grid-cols-12">
+			<div class="md:col-span-5">
+				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Engagement</p>
+				<h2 class="mt-4 text-3xl font-light tracking-tight text-white md:text-4xl">
+					The handshake.
+				</h2>
+				<p class="mt-6 max-w-sm leading-relaxed text-zinc-400">
+					We operate exclusively on a contract/consulting basis for high-impact projects. Current day
+					rates start at £800. Let's discuss your bottleneck.
+				</p>
+
+				<a
+					href={`mailto:${email}`}
+					class="mt-8 inline-flex items-center gap-3 border-b border-accent pb-1 font-mono text-sm text-white transition-colors hover:text-accent"
+				>
+					<span>{email}</span>
+					<span aria-hidden="true">→</span>
+				</a>
+			</div>
+
+			<div class="md:col-span-7">
+				<form
+					class="border border-zinc-800 bg-ink-elevated p-8 md:p-10"
+					method="POST"
+					action={`mailto:${email}`}
+					enctype="text/plain"
+				>
+					<p class="mb-8 font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						// contact.init()
+					</p>
+
+					<div class="space-y-6">
+						<div>
+							<label for="name" class="mb-2 block font-mono text-xs text-zinc-500">
+								name: string
+							</label>
+							<input
+								type="text"
+								id="name"
+								name="name"
+								required
+								class="w-full border border-zinc-800 bg-ink px-4 py-3 font-mono text-sm text-white placeholder:text-zinc-700 transition-colors focus:border-accent focus:outline-none"
+								placeholder='"Your name"'
+							/>
+						</div>
+
+						<div>
+							<label for="email-input" class="mb-2 block font-mono text-xs text-zinc-500">
+								email: string
+							</label>
+							<input
+								type="email"
+								id="email-input"
+								name="email"
+								required
+								class="w-full border border-zinc-800 bg-ink px-4 py-3 font-mono text-sm text-white placeholder:text-zinc-700 transition-colors focus:border-accent focus:outline-none"
+								placeholder='"you@company.com"'
+							/>
+						</div>
+
+						<div>
+							<label for="message" class="mb-2 block font-mono text-xs text-zinc-500">
+								bottleneck: string
+							</label>
+							<textarea
+								id="message"
+								name="message"
+								rows="5"
+								required
+								class="w-full resize-none border border-zinc-800 bg-ink px-4 py-3 font-mono text-sm text-white placeholder:text-zinc-700 transition-colors focus:border-accent focus:outline-none"
+								placeholder='"Describe the challenge..."'
+							></textarea>
+						</div>
+					</div>
+
+					<button
+						type="submit"
+						class="mt-8 w-full bg-accent py-4 font-mono text-sm uppercase tracking-widest text-white transition-colors hover:bg-accent-hover sm:w-auto sm:px-12"
+					>
+						Submit Inquiry
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

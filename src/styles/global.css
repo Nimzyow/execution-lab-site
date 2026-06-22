@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "Geist Mono", ui-monospace, monospace;
+
+	--color-ink: #0a0a0b;
+	--color-ink-elevated: #111113;
+	--color-ink-muted: #18181b;
+	--color-accent: #e63946;
+	--color-accent-hover: #ff4d5a;
+	--color-accent-muted: #e6394620;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-ink font-sans text-zinc-100 antialiased;
+	}
+
+	::selection {
+		@apply bg-accent/30 text-white;
+	}
+}

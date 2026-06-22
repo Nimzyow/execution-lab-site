@@ -1,0 +1,49 @@
+---
+const pillars = [
+	{
+		index: '01',
+		title: 'Extreme Operational Discipline',
+		body: 'Rooted in years of managing zero-downtime Linux core infrastructure and enterprise payment pipelines. Every line of code is resilient, tested, and built for high-stakes environments.',
+	},
+	{
+		index: '02',
+		title: 'Bespoke Engineering Precision',
+		body: 'We treat software architecture like a Michelin-starred kitchen or a fine-tuned machine. No generic templates—just hyper-optimized pipelines, agentic AI workflows, and elegant codebases.',
+	},
+	{
+		index: '03',
+		title: 'Deep-Dive Diagnostic Mindset',
+		body: 'Whether debugging legacy enterprise systems or navigating complex migrations, we dive deep beneath the surface to architect clean, permanent solutions.',
+	},
+];
+---
+
+<section id="thesis" class="border-b border-zinc-800 py-20 md:py-28">
+	<div class="mx-auto max-w-7xl px-6 md:px-10">
+		<div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+			<div class="md:col-span-4">
+				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">The Core Thesis</p>
+				<h2 class="mt-4 text-3xl font-light tracking-tight text-white md:text-4xl">
+					Values forged in production.
+				</h2>
+				<p class="mt-4 max-w-sm text-zinc-500">
+					Personal disciplines translated into technical execution principles.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 gap-px bg-zinc-800 md:col-span-8 md:grid-cols-3">
+				{
+					pillars.map((pillar) => (
+						<article class="group bg-ink p-8 transition-colors hover:bg-ink-elevated">
+							<span class="font-mono text-xs text-zinc-600 transition-colors group-hover:text-accent">
+								{pillar.index}
+							</span>
+							<h3 class="mt-6 text-lg font-medium tracking-tight text-white">{pillar.title}</h3>
+							<p class="mt-4 text-sm leading-relaxed text-zinc-500">{pillar.body}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

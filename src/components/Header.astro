@@ -1,0 +1,44 @@
+---
+const navItems = [
+	{ label: 'Thesis', href: '#thesis' },
+	{ label: 'Pedigree', href: '#pedigree' },
+	{ label: 'Capabilities', href: '#capabilities' },
+	{ label: 'Engage', href: '#contact' },
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/80 bg-ink/80 backdrop-blur-md">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+		<a href="/" class="group flex items-center gap-3">
+			<span
+				class="flex h-8 w-8 items-center justify-center border border-zinc-700 bg-ink-elevated font-mono text-xs text-accent transition-colors group-hover:border-accent"
+				aria-hidden="true"
+			>
+				//
+			</span>
+			<span class="font-mono text-sm tracking-tight text-zinc-300">
+				studio<span class="text-accent">.</span>eng
+			</span>
+		</a>
+
+		<nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+			{
+				navItems.map((item) => (
+					<a
+						href={item.href}
+						class="font-mono text-xs uppercase tracking-widest text-zinc-500 transition-colors hover:text-zinc-100"
+					>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<a
+			href="#contact"
+			class="border border-zinc-700 px-4 py-2 font-mono text-xs uppercase tracking-widest text-zinc-300 transition-all hover:border-accent hover:text-white"
+		>
+			Hire
+		</a>
+	</div>
+</header>

@@ -1,30 +1,30 @@
 ---
-const profiles = [
+const practices = [
 	{
-		id: 'A',
-		role: 'The Cloud & Infrastructure Bedrock',
+		id: '01',
+		role: 'Full-Stack Software & Tooling',
 		focus: [
-			'Enterprise AWS Architecture',
-			'Linux Systems',
-			'High-Availability Microservices',
-			'CI/CD Engine',
+			'Next.js / TypeScript → ship web products fast',
+			'React Native → native apps without a siloed mobile team',
+			'Custom tooling → kill repetitive manual work',
+			'AI-assisted product features → faster capture & workflows',
 		],
 		track:
-			'Lead Software Development Engineer at Mastercard, 8+ years at Rackspace moving through the ranks from Support to Senior Linux Operations Engineer. Expert in hard-nosed virtualization, Jenkins automation, and bulletproof infrastructure.',
+			'Shipped production apps end-to-end—consumer mobile (React Native), modern web (Next.js / TypeScript), and internal automation tools. Proven on Vocalink (Mastercard) and high-growth fintech: migration work cut from hundreds of hours to one, legacy stacks rebuilt for speed.',
 		span: 'md:col-span-7',
 		offset: '',
 	},
 	{
-		id: 'B',
-		role: 'The Full-Stack & Automation Accelerator',
+		id: '02',
+		role: 'Platform, Reliability & Cost Control',
 		focus: [
-			'React/TypeScript Architecture',
-			'Advanced Python/Django',
-			'MLOps',
-			'Custom Automation Tools',
+			'Enterprise AWS → uptime & cost control',
+			'Linux & HA systems → lower outage risk',
+			'CI/CD → safer releases',
+			'Cloud recovery → lower spend',
 		],
 		track:
-			'Senior Software Engineer at Vocalink (a Mastercard company), ex-Ripple Energy. Known for architecting custom internal automation tools that cut project migration times from 700 hours to a single hour, overhauling legacy Java stacks into modern React/TS ecosystems using Agentic AI, and driving aggressive AWS cost reductions.',
+			'Hardened through enterprise payment platforms and multi-tenant cloud ops—Mastercard-scale environments and Rackspace-grade Linux. Zero-downtime production, automated deploys, aggressive AWS cost recovery without sacrificing integrity.',
 		span: 'md:col-span-5',
 		offset: 'md:mt-16',
 	},
@@ -35,27 +35,27 @@ const profiles = [
 	<div class="mx-auto max-w-7xl px-6 md:px-10">
 		<div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-12">
 			<div class="md:col-span-6">
-				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">The Pedigree</p>
+				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">The Practice</p>
 				<h2 class="mt-4 text-3xl font-light tracking-tight text-white md:text-4xl">
-					A unified powerhouse team.
+					We build the product and the platform.
 				</h2>
 			</div>
 			<div class="flex items-end md:col-span-6">
 				<p class="max-w-md text-zinc-500">
-					Twelve years of hardcore cloud infrastructure and Linux operations, merged with elite
-					full-stack product engineering and AI-driven automation.
+					Full-stack software, custom tooling, and production infrastructure—one engagement, from
+					first commit to reliable release.
 				</p>
 			</div>
 		</div>
 
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-12">
 			{
-				profiles.map((profile) => (
+				practices.map((practice) => (
 					<article
-						class={`border border-zinc-800 bg-ink-elevated p-8 transition-colors hover:border-zinc-700 md:p-10 ${profile.span} ${profile.offset}`}
+						class={`border border-zinc-800 bg-ink-elevated p-8 transition-colors hover:border-zinc-700 md:p-10 ${practice.span} ${practice.offset}`}
 					>
 						<div class="flex items-start justify-between">
-							<span class="font-mono text-xs text-zinc-600">Profile {profile.id}</span>
+							<span class="font-mono text-xs text-zinc-600">Practice {practice.id}</span>
 							<span
 								class="h-px w-12 bg-accent"
 								aria-hidden="true"
@@ -63,13 +63,15 @@ const profiles = [
 						</div>
 
 						<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
-							{profile.role}
+							{practice.role}
 						</h3>
 
 						<div class="mt-8">
-							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">Focus</p>
+							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+								Capability → Outcome
+							</p>
 							<ul class="mt-3 flex flex-wrap gap-2">
-								{profile.focus.map((item) => (
+								{practice.focus.map((item) => (
 									<li class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
 										{item}
 									</li>
@@ -81,7 +83,7 @@ const profiles = [
 							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
 								Track Record
 							</p>
-							<p class="mt-3 text-sm leading-relaxed text-zinc-400">{profile.track}</p>
+							<p class="mt-3 text-sm leading-relaxed text-zinc-400">{practice.track}</p>
 						</div>
 					</article>
 				))

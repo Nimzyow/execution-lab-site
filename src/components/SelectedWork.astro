@@ -1,19 +1,16 @@
 ---
 const appStoreUrl = 'https://apps.apple.com/gb/app/recommends/id6740585961';
 
-const features = [
-	'Curated local food discovery ranked by real user recommendations',
-	'Visual-first feed with interactive map and personal collections',
-	'Group event planning with real-time RSVPs and push notifications',
-	'AI-powered photo recognition for frictionless recommendation capture',
+const solutions = [
+	'Built and shipped a full-stack React Native consumer app to the App Store',
+	'Integrated photo → dish recognition to cut manual cataloguing and speed content capture',
+	'Built supporting tooling and automated infra so releases stopped depending on heroics',
 ];
 
-const stack = ['React Native', 'TypeScript', 'Python', 'Ansible', 'Linux', 'Custom CI/CD'];
-
-const pipeline = [
-	{ step: '01', label: 'Local Build', detail: 'Develop & validate on laptop' },
-	{ step: '02', label: 'Ansible Push', detail: 'Provisioned server config via automation' },
-	{ step: '03', label: 'Linux Deploy', detail: 'Zero-friction release to production' },
+const results = [
+	{ metric: 'App Store', label: 'live consumer product' },
+	{ metric: 'Photo → dish', label: 'AI capture in one step' },
+	{ metric: 'Automated', label: 'release path to production' },
 ];
 ---
 
@@ -28,8 +25,8 @@ const pipeline = [
 			</div>
 			<div class="flex items-end md:col-span-7">
 				<p class="max-w-lg text-zinc-500">
-					We don't just consult—we build. Recommends is a fully featured consumer product, live on
-					the App Store, backed by a bespoke deployment pipeline engineered for speed and control.
+					Full-stack product work: React Native app, AI features, custom tooling, and the infra to
+					ship it—live for real users.
 				</p>
 			</div>
 		</div>
@@ -56,32 +53,49 @@ const pipeline = [
 					</h3>
 					<p class="mt-1 font-mono text-sm text-zinc-500">recommends.app</p>
 
-					<p class="mt-6 leading-relaxed text-zinc-400">
-						A local food recommendation app that surfaces only the top dishes—ranked by genuine user
-						recommendations, not algorithms or paid placement. Visual discovery, group coordination,
-						and AI-assisted capture, built as a production-grade React Native product from the ground
-						up.
-					</p>
+					<div class="mt-8 space-y-8">
+						<div>
+							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+								Challenge
+							</p>
+							<p class="mt-3 text-sm leading-relaxed text-zinc-400">
+								Manual dish cataloguing and ad-hoc releases blocked launch velocity and made every
+								update a production risk.
+							</p>
+						</div>
 
-					<ul class="mt-8 space-y-3">
-						{
-							features.map((feature) => (
-								<li class="flex gap-3 text-sm text-zinc-500">
-									<span class="mt-1.5 h-px w-3 shrink-0 bg-accent" aria-hidden="true" />
-									{feature}
-								</li>
-							))
-						}
-					</ul>
+						<div>
+							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+								Solution
+							</p>
+							<ul class="mt-3 space-y-3">
+								{
+									solutions.map((item) => (
+										<li class="flex gap-3 text-sm text-zinc-400">
+											<span class="mt-1.5 h-px w-3 shrink-0 bg-accent" aria-hidden="true" />
+											{item}
+										</li>
+									))
+								}
+							</ul>
+						</div>
 
-					<div class="mt-8 flex flex-wrap gap-2">
-						{
-							stack.map((tag) => (
-								<span class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
-									{tag}
-								</span>
-							))
-						}
+						<div>
+							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+								Impact
+							</p>
+							<ul class="mt-3 flex flex-wrap gap-2">
+								{
+									results.map((result) => (
+										<li class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
+											<span class="text-white">{result.metric}</span>
+											{' '}
+											{result.label}
+										</li>
+									))
+								}
+							</ul>
+						</div>
 					</div>
 
 					<a
@@ -95,49 +109,28 @@ const pipeline = [
 					</a>
 				</div>
 
-				<div class="p-8 md:col-span-5 md:p-10">
-					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
-						Deployment Architecture
-					</p>
-					<p class="mt-4 text-sm leading-relaxed text-zinc-500">
-						No generic cloud CI. A manually engineered pipeline that harnesses local machine power
-						to push and deploy directly to an Ansible-provisioned Linux server—configured exactly to
-						our specifications.
-					</p>
-
-					<div class="mt-8 space-y-0">
-						{
-							pipeline.map((item, i) => (
-								<div class="relative flex gap-4">
-									{i < pipeline.length - 1 && (
-										<span
-											class="absolute top-8 left-[11px] h-full w-px bg-zinc-800"
-											aria-hidden="true"
-										/>
-									)}
-									<span class="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center border border-zinc-700 bg-ink font-mono text-[10px] text-accent">
-										{item.step}
-									</span>
-									<div class="pb-8">
-										<p class="font-mono text-sm text-white">{item.label}</p>
-										<p class="mt-1 font-mono text-xs text-zinc-600">{item.detail}</p>
-									</div>
-								</div>
-							))
-						}
-					</div>
-
-					<div class="border border-zinc-800 bg-ink p-4 font-mono text-xs leading-relaxed text-zinc-600">
-						<p>
-							<span class="text-zinc-500">$</span> ansible-playbook deploy.yml
-						</p>
-						<p class="mt-1 text-zinc-700">
-							<span class="text-accent">→</span> provisioned linux host
-						</p>
-						<p class="mt-1 text-zinc-700">
-							<span class="text-accent">→</span> production release
-						</p>
-					</div>
+				<div class="flex items-center justify-center bg-ink p-8 md:col-span-5 md:p-10">
+					<a
+						href={appStoreUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group block w-full max-w-[240px]"
+						aria-label="View Recommends on the App Store"
+					>
+						<div
+							class="overflow-hidden rounded-[2rem] border border-zinc-700 bg-zinc-900 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-transform duration-300 group-hover:scale-[1.02]"
+						>
+							<img
+								src="/images/recommends-screenshot.png"
+								alt="Recommends iOS app — Discover feed showing a dish recommendation"
+								width="456"
+								height="900"
+								loading="lazy"
+								decoding="async"
+								class="h-auto w-full"
+							/>
+						</div>
+					</a>
 				</div>
 			</div>
 		</article>

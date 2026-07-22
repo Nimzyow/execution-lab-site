@@ -1,5 +1,11 @@
 ---
 const email = 'hello@s-nergylabs.co.uk';
+
+const models = [
+	{ name: 'Fixed-Scope', detail: 'Defined outcome, fixed fee' },
+	{ name: 'Retainer', detail: 'Ongoing capacity for critical systems' },
+	{ name: 'Fractional Lead', detail: 'Product architecture + delivery oversight' },
+];
 ---
 
 <section id="contact" class="py-20 md:py-28">
@@ -11,9 +17,19 @@ const email = 'hello@s-nergylabs.co.uk';
 					The handshake.
 				</h2>
 				<p class="mt-6 max-w-sm leading-relaxed text-zinc-400">
-					We operate exclusively on a contract/consulting basis for high-impact projects. Current day
-					rates start at £800. Let's discuss your bottleneck.
+					Three ways to engage. Day rates from £800. We start with a paid discovery call.
 				</p>
+
+				<ul class="mt-6 space-y-3">
+					{
+						models.map((model) => (
+							<li class="border-l border-accent pl-4">
+								<p class="font-mono text-xs text-white">{model.name}</p>
+								<p class="mt-1 text-sm text-zinc-500">{model.detail}</p>
+							</li>
+						))
+					}
+				</ul>
 
 				<a
 					href={`mailto:${email}`}
@@ -83,7 +99,7 @@ const email = 'hello@s-nergylabs.co.uk';
 						type="submit"
 						class="mt-8 w-full bg-accent py-4 font-mono text-sm uppercase tracking-widest text-white transition-colors hover:bg-accent-hover sm:w-auto sm:px-12"
 					>
-						Submit Inquiry
+						Request a Discovery Call
 					</button>
 				</form>
 			</div>

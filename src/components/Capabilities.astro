@@ -2,21 +2,24 @@
 const capabilities = [
 	{
 		index: '01',
-		title: 'Massive Automation Efficiency',
+		title: 'Product Software That Ships',
 		description:
-			'Transforming 700-hour legacy processes into 1-hour automated tasks.',
+			'Build and modernize full-stack apps—Next.js, TypeScript, React Native—so you get a working product, not a prototype.',
+		benefit: 'Faster time to market · Real users',
 	},
 	{
 		index: '02',
-		title: 'Cloud Migration & Cost Recovery',
+		title: 'Custom Tooling & Automation ROI',
 		description:
-			'Hardening AWS environments, automating off-hour resource management, and eliminating technical debt without impacting database integrity.',
+			'Cut 700-hour legacy workflows to 1-hour runs with purpose-built tools—same output, fraction of labour cost.',
+		benefit: 'Faster delivery · Lower OpEx',
 	},
 	{
 		index: '03',
-		title: 'Frontend Modernization',
+		title: 'Platform Reliability & Cost Recovery',
 		description:
-			'Overhauling monolithic enterprise apps into component-driven React/TypeScript applications with automated CI/CD and rigorous TDD.',
+			'Harden AWS, automate deploys, shut idle spend—without risking data integrity or release cadence.',
+		benefit: 'Lower cloud bill · Lower outage risk',
 	},
 ];
 ---
@@ -34,8 +37,8 @@ const capabilities = [
 			</div>
 			<div class="flex items-end md:col-span-7">
 				<p class="max-w-lg text-zinc-500">
-					We don't write pitch decks. We build production-grade architectures and automate complex
-					bottlenecks.
+					We don't write pitch decks. We write software—apps, tooling, and the platforms that run
+					them in production.
 				</p>
 			</div>
 		</div>
@@ -54,6 +57,9 @@ const capabilities = [
 						</div>
 						<h3 class="mt-8 text-lg font-medium tracking-tight text-white">{cap.title}</h3>
 						<p class="mt-4 text-sm leading-relaxed text-zinc-500">{cap.description}</p>
+						<p class="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+							{cap.benefit}
+						</p>
 					</article>
 				))
 			}

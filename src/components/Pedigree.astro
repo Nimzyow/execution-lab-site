@@ -1,93 +1,132 @@
 ---
-const practices = [
-	{
-		id: '01',
-		role: 'Full-Stack Software & Tooling',
-		focus: [
-			'Next.js / TypeScript → ship web products fast',
-			'React Native → native apps without a siloed mobile team',
-			'Custom tooling → kill repetitive manual work',
-			'AI-assisted product features → faster capture & workflows',
-		],
-		track:
-			'Shipped production apps end-to-end—consumer mobile (React Native), modern web (Next.js / TypeScript), and internal automation tools. Proven on Vocalink (Mastercard) and high-growth fintech: migration work cut from hundreds of hours to one, legacy stacks rebuilt for speed.',
-		span: 'md:col-span-7',
-		offset: '',
-	},
-	{
-		id: '02',
-		role: 'Platform, Reliability & Cost Control',
-		focus: [
-			'Enterprise AWS → uptime & cost control',
-			'Linux & HA systems → lower outage risk',
-			'CI/CD → safer releases',
-			'Cloud recovery → lower spend',
-		],
-		track:
-			'Hardened through enterprise payment platforms and multi-tenant cloud ops—Mastercard-scale environments and Rackspace-grade Linux. Zero-downtime production, automated deploys, aggressive AWS cost recovery without sacrificing integrity.',
-		span: 'md:col-span-5',
-		offset: 'md:mt-16',
-	},
-];
+const product = {
+	id: '01',
+	role: 'Full-Stack Software & Tooling',
+	label: 'Product Layer',
+	focus: [
+		'Modern Web Applications',
+		'Cross-Platform Mobile Apps',
+		'Workflow Automation Tools',
+		'AI-Powered Features',
+	],
+	track:
+		'Engineered production-ready web and mobile applications for fintech and enterprise platforms (Mastercard/Vocalink). Whether building complete products from scratch or joining existing teams to solve targeted software and tooling bottlenecks, we ship clean, maintainable code.',
+};
+
+const platform = {
+	id: '02',
+	role: 'Platform, Reliability & Cost Control',
+	label: 'Foundation Layer',
+	focus: [
+		'Cloud Architecture & AWS',
+		'High-Availability Systems',
+		'Automated CI/CD Pipelines',
+		'Cloud Cost Optimization',
+	],
+	track:
+		'Built, hardened, and migrated secure infrastructure for high-scale environments. We operate as dedicated platform experts or seamlessly integrate with your engineering leads to ensure zero-downtime releases, bulletproof uptime, and reduced cloud spend.',
+};
 ---
 
-<section id="pedigree" class="border-b border-zinc-800 py-20 md:py-28">
+<section id="services" class="border-b border-zinc-800 py-20 md:py-28">
 	<div class="mx-auto max-w-7xl px-6 md:px-10">
 		<div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-12">
 			<div class="md:col-span-6">
-				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">The Practice</p>
+				<p class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Services & Scope</p>
 				<h2 class="mt-4 text-3xl font-light tracking-tight text-white md:text-4xl">
-					We build the product and the platform.
+					Full-stack capability. Flexible scope.
 				</h2>
 			</div>
 			<div class="flex items-end md:col-span-6">
 				<p class="max-w-md text-zinc-500">
-					Full-stack software, custom tooling, and production infrastructure—one engagement, from
-					first commit to reliable release.
+					Whether you need end-to-end product delivery or targeted engineering support for a specific
+					part of your stack, we integrate seamlessly with your goals.
 				</p>
 			</div>
 		</div>
 
-		<div class="grid grid-cols-1 gap-6 md:grid-cols-12">
-			{
-				practices.map((practice) => (
-					<article
-						class={`border border-zinc-800 bg-ink-elevated p-8 transition-colors hover:border-zinc-700 md:p-10 ${practice.span} ${practice.offset}`}
-					>
-						<div class="flex items-start justify-between">
-							<span class="font-mono text-xs text-zinc-600">Practice {practice.id}</span>
-							<span
-								class="h-px w-12 bg-accent"
-								aria-hidden="true"
-							/>
-						</div>
+		<div class="mx-auto flex max-w-4xl flex-col">
+			<article class="border border-zinc-800 bg-ink-elevated p-8 transition-colors hover:border-zinc-700 md:p-10">
+				<div class="flex items-start justify-between gap-4">
+					<div>
+						<span class="font-mono text-xs text-zinc-600">Service {product.id}</span>
+						<p class="mt-1 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+							{product.label}
+						</p>
+					</div>
+					<span class="mt-2 h-px w-12 shrink-0 bg-accent" aria-hidden="true" />
+				</div>
 
-						<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
-							{practice.role}
-						</h3>
+				<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
+					{product.role}
+				</h3>
 
-						<div class="mt-8">
-							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
-								Capability → Outcome
-							</p>
-							<ul class="mt-3 flex flex-wrap gap-2">
-								{practice.focus.map((item) => (
-									<li class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
-										{item}
-									</li>
-								))}
-							</ul>
-						</div>
+				<div class="mt-8">
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Core Capabilities
+					</p>
+					<ul class="mt-3 flex flex-wrap gap-2">
+						{
+							product.focus.map((item) => (
+								<li class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
+									{item}
+								</li>
+							))
+						}
+					</ul>
+				</div>
 
-						<div class="mt-8 border-t border-zinc-800 pt-8">
-							<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
-								Track Record
-							</p>
-							<p class="mt-3 text-sm leading-relaxed text-zinc-400">{practice.track}</p>
-						</div>
-					</article>
-				))
-			}
+				<div class="mt-8 border-t border-zinc-800 pt-8">
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Track Record & Integration
+					</p>
+					<p class="mt-3 text-sm leading-relaxed text-zinc-400">{product.track}</p>
+				</div>
+			</article>
+
+			<div class="flex flex-col items-center py-2" aria-hidden="true">
+				<span class="h-6 w-px bg-zinc-700"></span>
+				<span class="font-mono text-[10px] uppercase tracking-[0.25em] text-zinc-600">sits on</span>
+				<span class="h-6 w-px bg-zinc-700"></span>
+			</div>
+
+			<article class="border border-zinc-800 bg-ink-elevated p-8 transition-colors hover:border-zinc-700 md:p-10">
+				<div class="flex items-start justify-between gap-4">
+					<div>
+						<span class="font-mono text-xs text-zinc-600">Service {platform.id}</span>
+						<p class="mt-1 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+							{platform.label}
+						</p>
+					</div>
+					<span class="mt-2 h-px w-12 shrink-0 bg-accent" aria-hidden="true" />
+				</div>
+
+				<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
+					{platform.role}
+				</h3>
+
+				<div class="mt-8">
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Core Capabilities
+					</p>
+					<ul class="mt-3 flex flex-wrap gap-2">
+						{
+							platform.focus.map((item) => (
+								<li class="border border-zinc-800 px-3 py-1 font-mono text-xs text-zinc-400">
+									{item}
+								</li>
+							))
+						}
+					</ul>
+				</div>
+
+				<div class="mt-8 border-t border-zinc-800 pt-8">
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Track Record & Integration
+					</p>
+					<p class="mt-3 text-sm leading-relaxed text-zinc-400">{platform.track}</p>
+				</div>
+			</article>
 		</div>
 	</div>
 </section>

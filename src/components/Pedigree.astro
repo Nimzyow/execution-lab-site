@@ -1,4 +1,6 @@
 ---
+const email = 'hello@s-nergylabs.co.uk';
+
 const product = {
 	id: '01',
 	role: 'Full-Stack Software & Tooling',
@@ -54,7 +56,13 @@ const platform = {
 							{product.label}
 						</p>
 					</div>
-					<span class="mt-2 h-px w-12 shrink-0 bg-accent" aria-hidden="true" />
+					<a
+						href="#contact"
+						class="mt-0.5 inline-flex shrink-0 items-center gap-2 border border-accent bg-accent/10 px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-accent transition-colors hover:bg-accent hover:text-white sm:px-4"
+					>
+						I'm interested
+						<span aria-hidden="true">→</span>
+					</a>
 				</div>
 
 				<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
@@ -81,6 +89,13 @@ const platform = {
 						Track Record & Integration
 					</p>
 					<p class="mt-3 text-sm leading-relaxed text-zinc-400">{product.track}</p>
+					<a
+						href="#contact"
+						class="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent transition-colors hover:text-accent-hover"
+					>
+						Discuss product work
+						<span aria-hidden="true">→</span>
+					</a>
 				</div>
 			</article>
 
@@ -98,7 +113,13 @@ const platform = {
 							{platform.label}
 						</p>
 					</div>
-					<span class="mt-2 h-px w-12 shrink-0 bg-accent" aria-hidden="true" />
+					<a
+						href="#contact"
+						class="mt-0.5 inline-flex shrink-0 items-center gap-2 border border-accent bg-accent/10 px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-accent transition-colors hover:bg-accent hover:text-white sm:px-4"
+					>
+						I'm interested
+						<span aria-hidden="true">→</span>
+					</a>
 				</div>
 
 				<h3 class="mt-6 text-xl font-medium tracking-tight text-white md:text-2xl">
@@ -125,8 +146,42 @@ const platform = {
 						Track Record & Integration
 					</p>
 					<p class="mt-3 text-sm leading-relaxed text-zinc-400">{platform.track}</p>
+					<a
+						href="#contact"
+						class="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent transition-colors hover:text-accent-hover"
+					>
+						Discuss platform work
+						<span aria-hidden="true">→</span>
+					</a>
 				</div>
 			</article>
+
+			<div
+				class="mt-6 flex flex-col items-start justify-between gap-4 border border-zinc-800 bg-ink p-6 sm:flex-row sm:items-center md:px-10"
+			>
+				<div>
+					<p class="font-mono text-[10px] uppercase tracking-[0.3em] text-zinc-600">
+						Ready to engage
+					</p>
+					<p class="mt-2 text-sm text-zinc-400">
+						Tell us where the bottleneck is—product, platform, or both.
+					</p>
+				</div>
+				<div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+					<a
+						href={`mailto:${email}`}
+						class="font-mono text-xs text-zinc-400 transition-colors hover:text-white"
+					>
+						{email}
+					</a>
+					<a
+						href="#contact"
+						class="inline-flex items-center justify-center bg-accent px-6 py-3 font-mono text-xs uppercase tracking-widest text-white transition-colors hover:bg-accent-hover"
+					>
+						Book a Call
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

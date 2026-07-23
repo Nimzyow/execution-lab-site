@@ -30,7 +30,9 @@ const headlineType =
 								class:list={['pointer-events-none invisible col-start-1 row-start-1', headlineType]}
 								aria-hidden="true"
 							>
-								{headline}
+								{headline.map((line) => (
+									<span class="block">{line}</span>
+								))}
 							</div>
 						))
 					}
@@ -39,7 +41,11 @@ const headlineType =
 						data-hero-headline
 						aria-live="polite"
 					>
-						<span data-hero-lead>{initial}</span>
+						<span data-hero-lead>
+							{initial.map((line) => (
+								<span class="block">{line}</span>
+							))}
+						</span>
 					</h1>
 				</div>
 

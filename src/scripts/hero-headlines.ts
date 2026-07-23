@@ -1,18 +1,22 @@
-export const headlines = [
-	'Full-Stack Apps Built to Scale.',
-	'Modernize Your Infrastructure Without Downtime.',
-	'Eliminate Bottlenecks with Intelligent Automation.',
-	'Engineering Expertise, Delivered on Demand.',
-] as const;
+export type Headline = readonly [string, string, string];
 
-export type Headline = (typeof headlines)[number];
+export const headlines: readonly Headline[] = [
+	['Full-Stack Apps Built', 'for Performance,', 'Reliability & Scale.'],
+	['Modernize Your', ' Infrastructure Without', 'Downtime.'],
+	['Eliminate Bottlenecks', 'with Intelligent', ' Automation.'],
+	['Engineering Expertise,', 'Delivered On', 'Demand.'],
+];
 
 const INTERVAL_MS = 4200;
 const FADE_MS = 380;
 
+export function renderHeadline(headline: Headline): string {
+	return headline.map((line) => `<span class="block">${line}</span>`).join('');
+}
+
 export function initHeroHeadlines(
 	root: HTMLElement,
-	items: readonly string[] = headlines,
+	items: readonly Headline[] = headlines,
 	intervalMs = INTERVAL_MS,
 ): () => void {
 	if (items.length < 2) return () => {};
@@ -24,8 +28,8 @@ export function initHeroHeadlines(
 	let timer: ReturnType<typeof setInterval> | undefined;
 	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-	const setCopy = (headline: string) => {
-		leadEl.textContent = headline;
+	const setCopy = (headline: Headline) => {
+		leadEl.innerHTML = renderHeadline(headline);
 	};
 
 	const advance = () => {

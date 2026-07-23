@@ -4,6 +4,8 @@ import { headlines } from '../scripts/hero-headlines';
 
 const proof = ['Mastercard', 'Vocalink', 'Rackspace', '700h → 1h automation'];
 const initial = headlines[0];
+const headlineType =
+	'text-4xl leading-[1.05] font-light tracking-tight md:text-6xl lg:text-7xl';
 ---
 
 <section class="relative overflow-hidden border-b border-zinc-800 pt-28 pb-20 md:pt-36 md:pb-28">
@@ -20,14 +22,28 @@ const initial = headlines[0];
 					Full-Stack Product & Platform Engineering
 				</p>
 
-				<h1
-					class="hero-headline min-h-[2.4em] text-4xl leading-[1.05] font-light tracking-tight text-white md:min-h-[2.3em] md:text-6xl lg:text-7xl"
-					data-hero-headline
-					aria-live="polite"
-				>
-					<span data-hero-lead>{initial.lead}</span>
-					<span class="block font-normal text-zinc-400" data-hero-sub>{initial.sub}</span>
-				</h1>
+				{/* Grid stack: invisible copies size to the tallest headline so rotation never shifts layout */}
+				<div class="grid">
+					{
+						headlines.map((headline) => (
+							<div
+								class:list={['pointer-events-none invisible col-start-1 row-start-1', headlineType]}
+								aria-hidden="true"
+							>
+								<span>{headline.lead}</span>
+								<span class="block font-normal">{headline.sub}</span>
+							</div>
+						))
+					}
+					<h1
+						class:list={['hero-headline col-start-1 row-start-1 text-white', headlineType]}
+						data-hero-headline
+						aria-live="polite"
+					>
+						<span data-hero-lead>{initial.lead}</span>
+						<span class="block font-normal text-zinc-400" data-hero-sub>{initial.sub}</span>
+					</h1>
+				</div>
 
 				<p class="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 md:text-xl">
 					S/NERGY LABS builds production software - web, mobile, and developer tooling backed by cloud infrastructure engineered to scale seamlessly and optimise costs.
